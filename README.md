@@ -1,1 +1,1 @@
-# gerenciarmerenda
+# gerenciamerenda
