@@ -5,10 +5,14 @@
  */
 package com.mycompany.gerenciarmerenda.modelo;
 
+import java.util.List;
+
 /**
  *
  * @author Gabriel Alves
  */
 public class Cardapio {
-    
+   private List<Prato> pratos; 
+   private int codCardapio;
+   
 }
