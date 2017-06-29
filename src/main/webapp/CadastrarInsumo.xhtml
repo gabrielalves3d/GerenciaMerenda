@@ -5,29 +5,38 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<html xmlns="http://www.w3.org/1999/xhtml">
+      
     <h:head>
         <title>TODO supply a title</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
     </h:head>
     <h:body>
+        <ui:include src='menu.xhtml'/>
+        
+        
+        
         <h:form id="formInsumo">
             <p:messages/>
             <p:fieldset legend="Cadastro de Insumo" style="width: 50%">
-                <p:panelGrid columns="2">
-
-                    <h:outputText value="Nome*:"/>
-                    <p:inputText  value="#{builderInsumo.nome}" />
-
-                    <h:outputText value="Quantidade*:"/>
-                    <p:inputText  value="#{builder.quantidade}" />
-
-                 </p:panelGrid> 
-            </p:fieldset>
-
+            <p:panelGrid columns="2">
+               
+                <h:outputText value="Nome*:"/>
+                <p:inputText  value="#{builderInsumo.nome}" />
+                
+                <h:outputText value="Tipo de Unidade*:"/>
+                
+               
+                
+                
+            </p:panelGrid> 
+            <p:commandButton value="Cadastrar" action="#{filmeController.inserir(builderFilme.buildFilme())}"
+                             />
+        </p:fieldset>
+            
+           
+            
         </h:form>
+            
     </h:body>
 </html>
