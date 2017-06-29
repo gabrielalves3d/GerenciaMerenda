@@ -4,12 +4,7 @@
  */
 package br.edu.ifpe.garanahuns.gerenciamerenda.persistencia.dao;
 
-import com.fasterxml.classmate.AnnotationConfiguration;
-import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -18,7 +13,6 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.criterion.Example;
 import org.hibernate.criterion.MatchMode;
-import org.hibernate.tool.hbm2ddl.SchemaExport;
 
 /**
  *
@@ -148,8 +142,8 @@ public class DaoManagerHiber {
     }
     
    public static void main(String args[]){
-       SchemaExport se = new SchemaExport(new AnnotationConfiguration().configure());
-		se.create(true, true);
+       //SchemaExport se = new SchemaExport(new AnnotationConfiguration().configure());
+	//	se.create(true, true);
     }
     
 }
