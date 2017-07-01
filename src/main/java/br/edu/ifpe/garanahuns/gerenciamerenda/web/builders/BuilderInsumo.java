@@ -19,7 +19,7 @@ import javax.faces.bean.RequestScoped;
 public class BuilderInsumo {
     private int codInsumo;
     private String nome;
-    private TipoUnidade tipo;
+    private String tipoUnidade;
     private double quantidade;
 
     public String getNome() {
@@ -28,30 +28,22 @@ public class BuilderInsumo {
 
    
 
-    public TipoUnidade getTipoUnidade() {
-        return tipo;
+    public String getTipoUnidade() {
+        return tipoUnidade;
     }
 
     public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public void setTipoUnidade(TipoUnidade tipo) {
-        this.tipo = tipo;
+    public void setTipoUnidade(String tipoUnidade) {
+        this.tipoUnidade = this.tipoUnidade;
     }
 
     public int getCodInsumo() {
         return codInsumo;
     }
 
-
-    public TipoUnidade getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(TipoUnidade tipo) {
-        this.tipo = tipo;
-    }
 
     public double getQuantidade() {
         return quantidade;
@@ -62,7 +54,7 @@ public class BuilderInsumo {
     }
     
     public Insumo buildInsumo(){
-        return new Insumo(codInsumo,nome,tipo,quantidade);
+        return new Insumo(codInsumo,nome,tipoUnidade,quantidade);
     }
 
 }

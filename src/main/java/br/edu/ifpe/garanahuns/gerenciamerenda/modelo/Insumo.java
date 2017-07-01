@@ -24,15 +24,14 @@ public class Insumo {
     private long codInsumo;
     @Column
     private String nome;
-    @Enumerated(EnumType.STRING)
-    private TipoUnidade tipo;
+    private String tipoUnidade;
     @Column
     private double quantidade;
 
-    public Insumo(int codInsumo, String nome, TipoUnidade tipo, double quantidade) {
+    public Insumo(int codInsumo, String nome, String tipoUndiade, double quantidade) {
         this.codInsumo = codInsumo;
         this.nome = nome;
-        this.tipo = tipo;
+        this.tipoUnidade=tipoUnidade;
         this.quantidade=quantidade;
     }
 
@@ -48,12 +47,12 @@ public class Insumo {
         return nome;
     }
 
-    public TipoUnidade getTipo() {
-        return tipo;
+    public String getTipoUnidade() {
+        return tipoUnidade;
     }
 
-    public void setTipo(TipoUnidade tipo) {
-        this.tipo = tipo;
+    public void setTipoUnidade(String tipoUnidade) {
+        this.tipoUnidade = tipoUnidade;
     }
 
     public void setNome(String nome) {
