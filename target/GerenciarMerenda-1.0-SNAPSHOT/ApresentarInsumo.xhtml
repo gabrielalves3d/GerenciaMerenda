@@ -11,13 +11,13 @@ and open the template in the editor.
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>TODO supply a title</title>
+        <title>Gerenciador de merenda/title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
     <h:body>
         <ui:include src="menu.xhtml"/>
         <form id='ApresentaInsumo'>
-            
+
             <p:dataTable id="tabela" var="item" value="#{insumoController.recuperarTodos()}"
                          paginator="true" rows="5" selectionMode="single" 
                          rowKey="#{item.codInsumo}" selection="#{insumoController.selectedInsumo}">
@@ -26,23 +26,23 @@ and open the template in the editor.
                     <h:outputText value="#{item.nome}"/>
                 </p:column>
                 <p:column headerText="Tipo Unidade">
-                    <h:outputText value="#{item.tipo}"/>
+                    <h:outputText value="#{item.tipoUnidade}"/>
                 </p:column>
                 <p:column headerText="Quantidade" >
                     <h:outputText value="#{item.quantidade}"/>
                 </p:column>
-                
+
                 <p:column headerText="Operações" style="width: 10%">
-                    
-                   
-                    <p:commandButton icon="ui-icon-pencil" action="#{insumoController.setInsumoAlterar(insumoController.selectedInsumo)}">
-                        
+
+
+                    <p:commandButton icon="ui-icon-pencil" action="#{insumoController.setInsumoParaAlterar(insumoController.selectedInsumo)}">
+
                     </p:commandButton>
                     <p:commandButton icon="ui-icon-closethick" oncomplete="PF('painelConfirma').show()">
                         <f:setPropertyActionListener value="#{item}" target="#{insumoController.selectedInsumo}"/>
                     </p:commandButton>
                 </p:column>
-                
+
             </p:dataTable>  
 
             <p:confirmDialog message="Deseja realmente excluir o registro?" id="dialConfirma"
@@ -52,14 +52,14 @@ and open the template in the editor.
                                  oncomplete="PF('painelConfirma').hide()" update=":gro tabela"/>
                 <p:commandButton value="não"/>
             </p:confirmDialog>
-              
 
-                
-                
-                
 
-            
-            
+
+
+
+
+
+
         </form>
     </h:body>
 </html>

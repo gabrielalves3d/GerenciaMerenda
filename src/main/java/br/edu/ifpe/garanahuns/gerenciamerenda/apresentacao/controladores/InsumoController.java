@@ -74,7 +74,7 @@ public class InsumoController {
         return insumoParaAlterar;
     }
 
-    public String setInsumoAlterar(Insumo insumoParaAlterar) {
+    public String setInsumoParaAlterar(Insumo insumoParaAlterar) {
         this.insumoParaAlterar = insumoParaAlterar;
         return "AlterarInsumo.xhtml";
     }
