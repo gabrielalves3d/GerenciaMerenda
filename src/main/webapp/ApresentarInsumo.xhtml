@@ -33,23 +33,32 @@ and open the template in the editor.
                 </p:column>
                 
                 <p:column headerText="Operações" style="width: 10%">
-                    <p:commandButton icon="ui-icon-search" oncomplete="PF('painelVisualiza').show()"
-                                     update=":FormularioApresentaInsumo:dialVisualiza">
-                        <f:setPropertyActionListener value="#{item}" target="#{insumoController.selectedInsumo}"/>
-                    </p:commandButton>
-                    <p:commandButton icon="ui-icon-pencil" action="#{insumoController.setInsumoAlterar(insumoController)}">
+                    
+                   
+                    <p:commandButton icon="ui-icon-pencil" action="#{insumoController.setInsumoAlterar(insumoController.selectedInsumo)}">
                         
                     </p:commandButton>
                     <p:commandButton icon="ui-icon-closethick" oncomplete="PF('painelConfirma').show()">
-                        <f:setPropertyActionListener value="#{item}" target="#{salaController.selectedSala}"/>
+                        <f:setPropertyActionListener value="#{item}" target="#{insumoController.selectedInsumo}"/>
                     </p:commandButton>
                 </p:column>
+                
+            </p:dataTable>  
+
+            <p:confirmDialog message="Deseja realmente excluir o registro?" id="dialConfirma"
+                             visible="false" widgetVar="painelConfirma">
+
+                <p:commandButton value="sim" action="#{insumoController.excluir(insumoController.selectedInsumo)}"
+                                 oncomplete="PF('painelConfirma').hide()" update=":gro tabela"/>
+                <p:commandButton value="não"/>
+            </p:confirmDialog>
+              
 
                 
                 
                 
 
-            </p:dataTable>
+            
             
         </form>
     </h:body>
