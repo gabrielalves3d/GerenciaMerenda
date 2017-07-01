@@ -5,12 +5,51 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+          
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
         <title>TODO supply a title</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+    </h:head>
+    <h:body>
+        <ui:include src="menu.xhtml"/>
+        <h:form id="formAlteraInsumo">
+            <p:fieldset legend="Alterar Insumo" style="width: 50%">
+            <p:panelGrid columns="2">
+                
+                <h:outputText value="Nome:"/>
+                <p:inputText value="#{insumoController.insumoAlterar.nome}" style="width: 400px"/>
+                
+                <h:outputText value="Tipo Unidade:"/>
+                <p:inputText value="#{insumoController.insumoAlterar.tipoUnidade}" style="width: 400px"/>
+                
+                <h:outputText value="Quantidade:"/>
+                <p:inputText value="#{insumoController.insumoAlterar.quantidade}" style="width: 400px"/>
+                
+            </p:panelGrid> 
+                <p:commandButton value="Alterar" oncomplete="PF('painel').show()"/>
+                    
+                             
+        </p:fieldset>
+            
+            <p:dialog id="dial" resizable="false" visible="false" modal="true" 
+                       widgetVar="painel">
+                <f:facet name="header">Atenção</f:facet>
+                <h:outputText value="Você deseja realmente alterar esse insumo?"/>
+                <f:facet name="footer">
+                    
+                    <p:commandButton value="sim" 
+                                     action="#{insumoController.alterar()}"
+                                     oncomplete="PF('painel').hide()" update="formAlteraInsumo"/>
+                    <p:commandButton value="não" oncomplete="PF('painel').hide()"/>
+                
+                </f:facet>
+                
+            </p:dialog>
+        </h:form>
+    </h:body>
 </html>
