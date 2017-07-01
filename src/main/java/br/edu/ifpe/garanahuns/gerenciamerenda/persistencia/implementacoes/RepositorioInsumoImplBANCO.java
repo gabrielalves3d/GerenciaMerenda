@@ -16,14 +16,7 @@ import java.util.ArrayList;
  * @author Gabriel Alves
  */
 public class RepositorioInsumoImplBANCO implements RepositorioGenerico<Insumo, Integer> {
-
-    private List<Insumo> listaInsumo = null;
-
-    protected RepositorioInsumoImplBANCO() {
-        this.listaInsumo = new ArrayList<>();
-
-    }
-
+    
     @Override
     public void inserir(Insumo t) {
         DaoManagerHiber.getInstance().persist(t);

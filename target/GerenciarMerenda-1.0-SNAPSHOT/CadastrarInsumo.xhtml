@@ -14,7 +14,7 @@ and open the template in the editor.
 
     <h:head>
         <title>Gerenciador de merenda</title>
-        
+
     </h:head>
     <h:body>
         <ui:include src='menu.xhtml'/>     
@@ -27,11 +27,7 @@ and open the template in the editor.
                     <p:inputText  value="#{builderInsumo.nome}" />
 
                     <h:outputText value="Unidade de medida*:"/>
-                    <p:selectOneMenu value="#{builderInsumo.tipoUnidade}">
-                        <f:selectItem itemLabel="Selecione" />
-                        <f:selectItems value="#{builderInsumo.tipoUnidade}" 
-                                       var="unidade" itemValue="#{tipounidade}" itemLabel="#{tipounidade.label}"/>
-                    </p:selectOneMenu>
+                    <p:inputText  value="#{builderInsumo.tipoUnidade}" />
 
                     <h:outputText value="Quantidade*:"/>
                     <p:inputText  value="#{builderInsumo.quantidade}" />
@@ -41,6 +37,6 @@ and open the template in the editor.
             </p:fieldset>
 
         </h:form>
-            
+
     </h:body>
 </html>

@@ -40,7 +40,7 @@ public class Fachada {
     }
     public Insumo recuperarInsumoBD(Integer g) {
         try {
-            return (Insumo) DaoManagerHiber.getInstance().recover("from Insumi where codigo=" + g).get(0);
+            return (Insumo) DaoManagerHiber.getInstance().recover("from Insumo where codigo=" + g).get(0);
         } catch (IndexOutOfBoundsException e) {
             return null;
         }

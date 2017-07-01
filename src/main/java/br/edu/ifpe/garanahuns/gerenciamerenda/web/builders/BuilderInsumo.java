@@ -37,7 +37,7 @@ public class BuilderInsumo {
     }
 
     public void setTipoUnidade(String tipoUnidade) {
-        this.tipoUnidade = this.tipoUnidade;
+        this.tipoUnidade = tipoUnidade;
     }
 
     public int getCodInsumo() {
