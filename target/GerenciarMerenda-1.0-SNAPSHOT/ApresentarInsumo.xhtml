@@ -5,12 +5,52 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>TODO supply a title</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
     <h:body>
-        <div>TODO write content</div>
+        <ui:include src="menu.xhtml"/>
+        <form id='ApresentaInsumo'>
+            
+            <p:dataTable id="tabela" var="item" value="#{insumoController.recuperarTodos()}"
+                         paginator="true" rows="5" selectionMode="single" 
+                         rowKey="#{item.codInsumo}" selection="#{insumoController.selectedInsumo}">
+                <f:facet name='header'>Insumos Cadastrados</f:facet>
+                <p:column headerText="Nome" >
+                    <h:outputText value="#{item.nome}"/>
+                </p:column>
+                <p:column headerText="Tipo Unidade">
+                    <h:outputText value="#{item.tipo}"/>
+                </p:column>
+                <p:column headerText="Quantidade" >
+                    <h:outputText value="#{item.quantidade}"/>
+                </p:column>
+                
+                <p:column headerText="Operações" style="width: 10%">
+                    <p:commandButton icon="ui-icon-search" oncomplete="PF('painelVisualiza').show()"
+                                     update=":FormularioApresentaInsumo:dialVisualiza">
+                        <f:setPropertyActionListener value="#{item}" target="#{insumoController.selectedInsumo}"/>
+                    </p:commandButton>
+                    <p:commandButton icon="ui-icon-pencil" action="#{insumoController.setInsumoAlterar(insumoController)}">
+                        
+                    </p:commandButton>
+                    <p:commandButton icon="ui-icon-closethick" oncomplete="PF('painelConfirma').show()">
+                        <f:setPropertyActionListener value="#{item}" target="#{salaController.selectedSala}"/>
+                    </p:commandButton>
+                </p:column>
+
+                
+                
+                
+
+            </p:dataTable>
+            
+        </form>
     </h:body>
 </html>
