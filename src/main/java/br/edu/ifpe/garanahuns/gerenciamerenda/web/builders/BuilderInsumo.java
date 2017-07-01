@@ -7,15 +7,24 @@ package br.edu.ifpe.garanahuns.gerenciamerenda.web.builders;
 
 import br.edu.ifpe.garanahuns.gerenciamerenda.modelo.Insumo;
 import br.edu.ifpe.garanahuns.gerenciamerenda.modelo.TipoUnidade;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 
 /**
  *
  * @author Gabriel Alves
  */
+@ManagedBean
+@RequestScoped
 public class BuilderInsumo {
     private int codInsumo;
     private String nome;
     private TipoUnidade tipo;
+    private double quantidade;
+
+    public String getNome() {
+        return nome;
+    }
 
    
 
@@ -30,9 +39,30 @@ public class BuilderInsumo {
     public void setTipoUnidade(TipoUnidade tipo) {
         this.tipo = tipo;
     }
+
+    public int getCodInsumo() {
+        return codInsumo;
+    }
+
+
+    public TipoUnidade getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TipoUnidade tipo) {
+        this.tipo = tipo;
+    }
+
+    public double getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(double quantidade) {
+        this.quantidade = quantidade;
+    }
     
     public Insumo buildInsumo(){
-        return new Insumo(codInsumo,nome,tipo);
+        return new Insumo(codInsumo,nome,tipo,quantidade);
     }
 
 }

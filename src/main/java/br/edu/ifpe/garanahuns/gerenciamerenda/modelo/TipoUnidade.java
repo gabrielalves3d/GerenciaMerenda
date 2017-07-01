@@ -10,11 +10,11 @@ package br.edu.ifpe.garanahuns.gerenciamerenda.modelo;
  * @author Gabriel Alves
  */
 public enum TipoUnidade {
-    UN(1),KG(2),PCT(3);
+    UNIDADE(1),KILOGRAMA(2),PACOTE(3),LITRO(4);
     
     private final int valor;
 
-    private TipoUnidade(int valorOpcao) {
+    TipoUnidade(int valorOpcao) {
         this.valor = valorOpcao;
     }
 

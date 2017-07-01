@@ -21,7 +21,7 @@ public class ItemInsumo  {
     @ManyToOne
     private Insumo insumo;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private long codItemInsumo;
 
     public ItemInsumo(Insumo insumo, int codItemInsumo) {

@@ -19,7 +19,7 @@ import javax.persistence.OneToMany;
 @Entity
 public class Prato {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private long codPrato;
     @OneToMany
     private List<ItemInsumo> itensInsumo;
